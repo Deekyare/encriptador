@@ -60,6 +60,14 @@ function btnCopiar () {
     
 }
 
+function btnLimpiar() {
+    inputTexto.value = ""; // Limpia el textarea
+    resultado.innerHTML = ""; // Limpia el resultado
+    contenedorSinMensaje.classList.remove("escondido"); // Muestra el cactus
+    contenedorResultado.classList.add("escondido"); // Oculta el resultado
+  }
+  
+
 function setClipboard(text) {
     const type = "text/plain";
     const blob = new Blob([text], { type });

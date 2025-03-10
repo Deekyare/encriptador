@@ -1,61 +1,79 @@
 <!DOCTYPE html>
-
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encriptador</title>
-    <link rel="stylesheet" href="reset.css" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/imagenes/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <header>
-      <div class="logo">
-        <img id="logo" src="imagenes/s.png" />
+    <header class="py-3">
+      <div class="container text-center">
+        <div class="d-flex align-items-center justify-content-center gap-3">
+          <img id="logo" src="imagenes/logo.png" alt="Logo" class="img-fluid" style="max-width: 60px;" />
+          <h1 class="titulo">Encriptador de Texto</h1>
+        </div>
       </div>
     </header>
 
-    <main>
-      <section class="contenido">
-        <textarea
-          class="inputTexto"
-          cols="40"
-          rows="6"
-          placeholder="Ingrese aquí su texto aqui"
-        ></textarea>
-
-        <div class="leyenda">
-          <img src="imagenes/exclamation.png" />
-          <span>Letras minúsculas y sin acentos</span>
-        </div>
-        <div class="botones">
-          <button class="encriptar" onclick="btnEncriptar()">Encriptar</button>
-          <button class="desencriptar" onclick="btnDesencriptar()">Desencriptar</button>
-        </div>
-      </section>
-
-      <section class="lateral">
-        <div class="contenedor-resultado escondido">
-          <p class="resultado"></p>
-          <button class="copiar" onclick="btnCopiar()">Copiar </button>
-        </div>
-
-        <div class="contenedor-sin-mensaje">
-          <img class="muñeco" id="muñeco" src="imagenes/cactus.jpeg" />
-          <div >
-            <p class="ningun-mensaje">Ningun mensaje fue encontrado</p>
-            <p class="ingrese-mensaje">Ingresa el texto que desees encriptar o desencriptar.</p>
+    <main class="container py-5">
+      <div class="row g-4">
+        <section class="col-12 col-md-7 contenido shadow-sm rounded p-4 bg-white">
+          <textarea
+            class="inputTexto form-control mb-3"
+            rows="6"
+            placeholder="Ingrese aquí su texto"
+          ></textarea>
+          <div class="leyenda d-flex align-items-center mb-3">
+            <i class="bi bi-exclamation-circle me-2"></i>
+            <span>Solo letras minúsculas y sin acentos</span>
           </div>
-        </div>
-      </section>
+          <div class="botones d-flex gap-3 flex-wrap">
+            <button class="encriptar btn flex-grow-1" onclick="btnEncriptar()">
+              <i class="bi bi-lock me-2"></i>Encriptar
+            </button>
+            <button class="desencriptar btn flex-grow-1" onclick="btnDesencriptar()">
+              <i class="bi bi-unlock me-2"></i>Desencriptar
+            </button>
+            <button class="limpiar btn flex-grow-1" onclick="btnLimpiar()">
+              <i class="bi bi-trash me-2"></i>Limpiar
+            </button>
+          </div>
+        </section>
+
+        <section class="col-12 col-md-5 lateral">
+          <div class="contenedor-resultado card p-4 escondido h-100 shadow-sm">
+            <p class="resultado card-text flex-grow-1 mb-0"></p>
+            <button class="copiar btn mt-3 w-100" onclick="btnCopiar()">
+              <i class="bi bi-clipboard me-2"></i>Copiar
+            </button>
+          </div>
+          <div class="contenedor-sin-mensaje card p-4 h-100 shadow-sm">
+            <img class="muñeco img-fluid mx-auto d-block" src="imagenes/cactus.jpeg" alt="Cactus" />
+            <div class="text-center mt-3">
+              <p class="ningun-mensaje fw-bold">Sin mensaje</p>
+              <p class="ingrese-mensaje">Ingresa un texto para encriptar o desencriptar</p>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
-    
-    <footer>
-      <div>
+
+    <footer class="py-3 text-center bg-light">
+      <div class="container text-muted">
         Silvia Giardini - Agosto 2022
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
 </html>
